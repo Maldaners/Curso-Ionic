@@ -4,12 +4,6 @@ import { API_CONFIG } from '../../config/api.config';
 import { ProdutoDTO } from '../../models/produto.dto';
 import { ProdutoService } from '../../services/domain/produto.service';
 
-/**
- * Generated class for the ProdutosPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -48,6 +42,7 @@ export class ProdutosPage {
   }  
   
   showDetail(produto_id : string) {
-    this.navCtrl.push('ProdutoDetailPage', {produto_id: produto_id});
+    this.navCtrl.push('ProdutoDetailPage',
+    {produto_id: produto_id});
   }
 }
