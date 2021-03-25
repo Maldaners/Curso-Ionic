@@ -24,11 +24,18 @@ export class ErrorInterceptor implements HttpInterceptor {
                 console.log("Erro detectado pelo interceptor:");
                 console.log(errorObj);
     
-               
+                switch(errorObj.status) {
+
+                    case 403:
+                    this.handle403();
+                    break;
+
+                }
+    
                 return Observable.throw(errorObj);
             }) as any;
         }
-    
+        
         handle403() {
             this.storage.setLocalUser(null);
         }

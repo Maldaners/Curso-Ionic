@@ -27,11 +27,18 @@ export class ProfilePage {
     if (localUser && localUser.email) {
       this.clienteService.findByEmail(localUser.email)
       .subscribe(response=> {
-        this.cliente = response;
+      this.cliente = response;
         this.getImageIfExists;
       },
-      error => {})
+      error => {
+        if (error.status == 403) {
+          this.navCtrl.setRoot('HomePage');
+        }
+      });
     }
+    else {
+      this.navCtrl.setRoot('HomePage');
+    }    
   }
 
   getImageIfExists() {
