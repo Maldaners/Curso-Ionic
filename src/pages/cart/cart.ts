@@ -6,6 +6,7 @@ import { API_CONFIG } from '../../config/api.config';
 import { CartService } from '../../services/domain/cart.service';
 import { CartItem } from '../../models/cart-item';
 
+
 @IonicPage()
 @Component({
   selector: 'page-cart',

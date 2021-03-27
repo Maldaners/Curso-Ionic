@@ -52,7 +52,7 @@ export class CartService {
         this.storage.setCart(cart);
         return cart;
     }
-
+    
     decreaseQuantity(produto: ProdutoDTO) : Cart {
         let cart = this.getCart();
         let position = cart.items.findIndex(x => x.produto.id == produto.id);
@@ -70,7 +70,7 @@ export class CartService {
         let cart = this.getCart();
         let sum = 0;
         for (var i=0; i<cart.items.length; i++) {
-            sum += cart.items[i].produto.preco * cart.items[i].quantidade;
+            sum += (cart.items[i].produto.preco * cart.items[i].quantidade);
         }
         return sum;
     }
