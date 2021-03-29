@@ -27,7 +27,7 @@ export class ProfilePage {
     public camera: Camera,
     public sanitizer: DomSanitizer) {
 
-      this.profileImage = 'assets/imgs/avatar-blank.png';
+      this.profileImage = 'assets/imgs/sem-foto.png';
   }
 
   ionViewDidLoad() {
@@ -63,7 +63,7 @@ export class ProfilePage {
       });
     },
     error => {
-      this.profileImage = 'assets/imgs/avatar-blank.png';
+      this.profileImage = 'assets/imgs/sem-foto.png';
     });
   }
 
